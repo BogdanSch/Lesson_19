@@ -43,8 +43,8 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Search End ***** -->
                         <div class="search-input">
-                            <form id="search" action="#">
-                                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"
+                            <form id="search" action="index.php" method="POST">
+                                <input type="text" placeholder="Type Something" id='searchText' name="search"
                                     onkeypress="handle" />
                                 <i class="fa fa-search"></i>
                             </form>
@@ -54,7 +54,7 @@
                         <ul class="nav">
                             <li><a href="index.php" class="active">Home</a></li>
                             <li><a href="registration.php">Registration</a></li>
-                            <li><a href="profile.html">Profile <img src="assets/images/profile-header.jpg" alt=""></a>
+                            <!-- <li><a href="profile.html">Profile <img src="assets/images/profile-header.jpg" alt=""></a> -->
                             </li>
                         </ul>
                         <a class='menu-trigger'>

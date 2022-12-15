@@ -63,6 +63,7 @@ if (isset($_POST['sort'])) {
     sorting($how_to_sort);
 }
 
+echo "<hr>";
 $out = out_arr();
 
 if (count($out) > 3) {
@@ -72,25 +73,13 @@ if (count($out) > 3) {
 } else {
     echo "No data...";
 }
-
-$str_form_search = "
-<div class=\"container\">
-  <h3>Search:</h3>
-	<form  name='searchForm' action='index.php' method='post' onSubmit='return overify_login(this);' >
- 		<input type='text' name='search' class='form-control' >
- 		<input type='submit' name='gosearch' value='Confirm'  class='btn btn-secondary my-2'>
- 		<input type='reset' name='clear' value='Reset'  class='btn btn-secondary my-2'>
- 	</form>
-</div>";
-
-echo $str_form_search;
-
-if (isset($_POST['gosearch'])) {
+echo "<hr>";
+if (isset($_POST['search'])) {
     $data = test_input($_POST['search']);
     $out = out_search($data);
 
     // вызов функции out_arr() из action.php для получения массива
-    if (count($out) > 0) {
+    if (count($out) > 3) {
         foreach ($out as $row) { //вывод массива построчно
             echo $row;
         }

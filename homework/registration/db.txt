@@ -1,0 +1,1 @@
+a:7:{s:4:"user";s:4:"user";s:5:"admin";s:5:"admin";s:3:"pit";s:4:"w123";s:5:"piter";s:5:"piter";s:6:"amogus";s:6:"amogus";s:3:"bot";s:60:"$2y$10$4h.LErCAiETycrWubZhUJ.kSEQffj0ZvU51lZP2t17BfLUvgcDK8e";s:8:"newadmin";s:60:"$2y$10$eW4yhYdZIhhTjuZlMuCwpeDGiQDEBhAJ3WWl5rnKO5Jb7.RhPRb06";}

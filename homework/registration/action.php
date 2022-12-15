@@ -9,12 +9,12 @@ ob_end_flush();
 
 function check_autorize($log, $pas) {
     $users = get_users();
-    return array_key_exists($log, $users) && $pas == $users[$log];
+    return array_key_exists($log, $users) && (password_verify($pas, $users[$log] || $pas == $users[$log]));
 }
 
 function check_user($log, $pas) {
     $users = get_users();
-    if(array_key_exists($log, $users) && $pas == $users[$log]){
+    if(array_key_exists($log, $users) && (password_verify($pas, $users[$log]) || $pas == $users[$log])){
         $_SESSION['authorized'] = 1;
         return true;
     }
@@ -25,7 +25,7 @@ function add_user($log, $pas) {
     $users = get_users();
 
     if(!check_log($log)){
-        $users[$log] = $pas;
+        $users[$log] = password_hash($pas, PASSWORD_DEFAULT);
         $_SESSION['authorized'] = 1;
         update_users($users);
         return true;
@@ -48,7 +48,7 @@ function update_users($users){
 function get_users(){
     $file_name = "db.txt";
     $file = fopen($file_name, "r");
-    $users = fread($file, filesize($file_name));
+    $users = @fread($file, filesize($file_name));
     fclose($file);
     return unserialize($users);
 }
@@ -112,7 +112,6 @@ function name($a, $b)
     }
 
 }
-
 function area($a, $b)
 {
     if ($a["area"] < $b["area"]) {

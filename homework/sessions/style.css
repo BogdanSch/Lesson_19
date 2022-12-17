@@ -1,0 +1,9 @@
+table td, th{
+    text-align: center;
+}
+.sort-form{
+    max-width: 35%;
+}
+.nav{
+    align-items: center;
+}
